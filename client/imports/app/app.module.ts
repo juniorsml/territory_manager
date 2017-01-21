@@ -4,6 +4,8 @@ import { AppComponent } from "./app.component";
 import { DemoComponent } from "./demo/demo.component";
 import { DemoDataService } from "./demo/demo-data.service";
 import { TERRITORIES_DECLARATIONS } from "./territories";
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
 
 @NgModule({
   // Components, Pipes, Directive
@@ -22,7 +24,8 @@ import { TERRITORIES_DECLARATIONS } from "./territories";
   ],
   // Modules
   imports: [
-    BrowserModule
+    BrowserModule ,
+    RouterModule.forRoot(routes)
   ],
   // Main Component
   bootstrap: [ AppComponent ]
