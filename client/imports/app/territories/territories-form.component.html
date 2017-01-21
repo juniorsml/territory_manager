@@ -4,9 +4,26 @@
     </div>
   </div>
   <div class="row">
-      <div class="col-lg-10 col-lg-offset-1">
-        <form>
-          <div class="form-group"></div>
-        </form>
-      </div>
+    <div  class="col-lg-10 col-lg-offset-1">
+    <form>
+      <fieldset class="form-group">
+        <legend>Publisher</legend>
+        <label for="pubName">Publisher Name</label>
+        <input type="text" class="form-control" id="pubName" aria-describedby="Publisher Name" placeholder="Publisher Name">
+      </fieldset>
+      <fieldset class="form-group">
+        <legend>Householder</legend>
+        <label for="hhName">Householder Name</label>
+        <input type="text" class="form-control" id="hhName" aria-describedby="Householder Name" placeholder="Householder Name">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-info   active" >
+              <input type="radio" class="form-check-input custom-control custom-radio" autocomplete="off" name="optionsRadios" id="sexMale"   checked> Male
+            </label>
+            <label class="btn btn-info" >
+              <input type="radio"  class="form-check-input" autocomplete="off" name="optionsRadios" id="sexFemale" > Female
+            </label>
+          </div>
+      </fieldset>
+    </form>
   </div>
+</div>
