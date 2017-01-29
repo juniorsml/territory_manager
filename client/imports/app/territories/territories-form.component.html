@@ -5,37 +5,37 @@
   </div>
   <div class="row">
     <div  class="col-lg-10 col-lg-offset-1">
-    <form>
-      <fieldset class="form-group ">
+    <form [formGroup]="addForm" (ngSubmit)="addAdress()">
+      <fieldset class="form-group" formGroupName="publisher">
         <div class="form-group col-xs-12">
         <legend>Publisher</legend>
         <label for="pubName" class="control-label">Publisher Name</label>
-        <input type="text" class="form-control" id="pubName" aria-describedby="Publisher Name" placeholder="Publisher Name">
+        <input type="text" class="form-control" formControlName="pubName" aria-describedby="Publisher Name" placeholder="Publisher Name">
         </div>
       </fieldset>
-      <fieldset class="form-group">
+      <fieldset class="form-group" formGroupName="houseHolder">
         <div class="form-group col-xs-12">
           <legend>Householder</legend>
-          <label for="hhNameName" class="control-label">Householder Name</label>
-          <input type="text" class="form-control" id="hhName" aria-describedby="Householder Name" placeholder="Householder Name">
+          <label for="hhName" class="control-label">Name</label>
+          <input type="text" class="form-control" formControlName="hhName" aria-describedby="Householder Name" placeholder="Householder Name">
         </div>
         <div class="form-group col-xs-12">
            <div class="input-group input-group-sm">
           <div class="input-group-addon">Gender</div>
           <div class="btn-group form-control" data-toggle="buttons-radio">
-            <label class="btn btn-info" >
-              <input type="radio" name="options" id="option1" autocomplete="off" checked> Male
+            <label class="btn btn-info " >
+              <input type="radio" name="hhGender" value="male" formControlName="hhGender" autocomplete="off" checked> Male
             </label>
             <label class="btn btn-info" >
-              <input type="radio" name="options" id="option2" autocomplete="off"> Femele
+              <input type="radio" name="hhGender"  value="female" formControlName="hhGender" autocomplete="off"> Femele
             </label>
           </div>
           </div>
           </div>
         <div class="form-group col-xs-12">
-          <label class="control-label">Nationality</label>
+          <label for="hhNationality" class="control-label">Nationality</label>
           <div class="selectContainer">
-              <select class="form-control" name="hhNationality">
+              <select class="form-control" formControlName="hhNationality">
                 <option value="">-- select one --</option>
                         <option value="afghan">Afghan</option>
                         <option value="albanian">Albanian</option>
@@ -234,21 +234,26 @@
         </div>
         <div class="form-group col-md-7">
           <label for="hhPhone" class="control-label">Phone</label>
-          <input type="tel"  class="form-control" id="hhPhone" aria-describedby="Householder Phone" placeholder="Householder Phone">
+          <input type="tel"  class="form-control" formControlName="hhPhone" aria-describedby="Householder Phone" placeholder="Householder Phone">
         </div>
-          <div class="form-group col-md-7">
+        <div  formGroupName="address">
+          <div class="form-group col-md-12">
             <label for="hhZipCode" class="control-label">ZIP Code</label>
-            <input type="text"  class="form-control col-md-6" id="hhZipCode" aria-describedby="Householder Zip Code" placeholder="Householder Zip Code">
+            <input type="text"  class="form-control col-md-6" formControlName="hhZipCode" aria-describedby="Householder Zip Code" placeholder="Householder Zip Code">
           </div>
           <div class="form-group col-md-7">
             <label for="hhAddress" class="control-label">Address Line</label>
-            <input type="text"  class="form-control col-md-6" id="hhAddress" aria-describedby="Householder Line Address" placeholder="Householder Line Address">
+            <input type="text"  class="form-control col-md-6" formControlName="hhAddress" aria-describedby="Householder Line Address" placeholder="Householder Line Address">
           </div>
-          <div class="form-group col-md-12">
-           <label for="hhObs">Notes</label>
-           <textarea class="form-control" id="hhObs" rows="3"></textarea>
-         </div>
+        </div>
       </fieldset>
+      <div class="form-group col-md-12">
+       <label for="hhObs">Notes</label>
+       <textarea class="form-control" formControlName="hhObs" rows="3"></textarea>
+     </div>
+      <div class="form-group col-md-12">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
     </form>
   </div>
 </div>

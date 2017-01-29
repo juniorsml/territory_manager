@@ -6,6 +6,7 @@ import { DemoDataService } from "./demo/demo-data.service";
 import { TERRITORIES_DECLARATIONS } from "./territories";
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   // Components, Pipes, Directive
@@ -25,7 +26,9 @@ import { routes } from './app.routes';
   // Modules
   imports: [
     BrowserModule ,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   // Main Component
   bootstrap: [ AppComponent ]
