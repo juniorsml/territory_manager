@@ -22,5 +22,5 @@ xolvio:cleaner
 hwillson:stub-collections
 dispatch:mocha-phantomjs
 shell-server@0.2.1
-twbs:bootstrap
+twbs:bootstrap@4.0.0-alpha.3
 bootstrap
